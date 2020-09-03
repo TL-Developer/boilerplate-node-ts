@@ -7,7 +7,7 @@ const app = express(); // Criamos uma instância do express
 // Adicionamos uma rota de teste
 app.get('/', (req: express.Request, res: express.Response) => {
   res.json({
-    message: 'Hello Worldddd',
+    message: 'Hello',
   });
 });
 
