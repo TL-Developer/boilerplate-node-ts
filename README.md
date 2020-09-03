@@ -1,3 +1,3 @@
 # NodeJS with Typescript
 
-TS + ESLint + Docker
+TS + ESLint + Docker + Debugger on container docker
