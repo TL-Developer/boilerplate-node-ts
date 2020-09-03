@@ -10,5 +10,5 @@ services:
       - ./src:/app/src
     ports:
       - "8080:8080"
-      - "8181:8181"
+      - "9229:9229"
     command: npm run dev

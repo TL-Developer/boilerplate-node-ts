@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix ./src/*",
-    "dev": "ts-node-dev --inspect --respawn --transpile-only ./src/index.ts",
+    "dev": "ts-node-dev --inspect=0.0.0.0:9229 --respawn --transpile-only ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
+    "ts-node": "^9.0.0",
     "ts-node-dev": "^1.0.0-pre.62",
     "typescript": "^4.0.2"
   },
