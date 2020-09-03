@@ -1,3 +1,3 @@
-# smart-schools-api-ts
+# NodeJS with Typescript
 
-Api with typescript
+TS + ESLint + Docker
