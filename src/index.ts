@@ -1,4 +1,7 @@
 import express from 'express';
+import debug from 'debug';
+
+const log = debug('app:smartschools');
 
 const PORT = 8080;
 
@@ -11,5 +14,5 @@ app.get('/', (req: express.Request, res: express.Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Aplicação escutando na porta ${PORT}`);
+  log(`Aplicação escutando na porta ${PORT}`);
 });
