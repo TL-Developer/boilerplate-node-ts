@@ -1,15 +1,14 @@
-FROM node:12
+FROM node:14
 
-WORKDIR /home/node/app
+WORKDIR /app
 
-ADD . .
+COPY package*.json ./
 
-ENV NODE_ENV=production
+#--silent
+RUN npm i
 
-RUN npm ci
+COPY . .
 
-USER node
+EXPOSE 3000
 
-EXPOSE 8080
-
-CMD [ "node", "build/server.js" ]
+CMD ["npm", "start"]

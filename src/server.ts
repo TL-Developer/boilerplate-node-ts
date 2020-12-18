@@ -3,13 +3,13 @@ import debug from 'debug';
 
 const log = debug('app:smartschools');
 
-const PORT = 8080;
+const PORT = 3000;
 
 const app = express();
 
 app.get('/', (req: express.Request, res: express.Response) => {
   res.json({
-    message: 'Hello',
+    message: 'Helloooooo',
   });
 });
 
