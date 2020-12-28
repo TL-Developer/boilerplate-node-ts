@@ -1,17 +1,7 @@
-import express from 'express';
+import app from './app';
 
-const PORT = 3000;
-
-const app = express();
-
-app.get('/', (req: express.Request, res: express.Response) => {
-  res.json({
-    message: 'Helloooooo',
-  });
-});
+const PORT = 5190;
 
 app.listen(PORT, () => {
   console.log(`Aplicação escutando na porta ${PORT}`);
 });
-
-export default app;

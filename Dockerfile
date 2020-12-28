@@ -15,6 +15,6 @@ RUN npm run build
 
 RUN echo $(ls -a)
 
-EXPOSE 3000
+EXPOSE 5190
 
 CMD ["npm", "start"]

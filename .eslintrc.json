@@ -16,10 +16,10 @@
       "error",
       "ignorePackages",
       {
-        "js": "never",
-        "jsx": "never",
         "ts": "never",
-        "tsx": "never"
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
       }
     ],
     "linebreak-style": 0,
