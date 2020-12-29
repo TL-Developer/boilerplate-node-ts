@@ -6,12 +6,30 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",     
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "removeComments": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
+    "rootDirs": [
+      "./src"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
     "./src"
+  ],
+  "exclude": [
+    "./node_modules/*",
+    "dist"
   ]
 }
