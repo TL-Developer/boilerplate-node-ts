@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import request from 'supertest';
-import app from '../server';
+import app from '../src/server';
 
 describe('Unit Test Methods', () => {
   it('should be return 2 === 2 ', () => {

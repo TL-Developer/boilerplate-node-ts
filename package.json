@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "lint": "eslint --fix ./src/*",
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "eslint ./src --ext .ts --fix",
     "start": "node ./dist/server",
     "dev": "ts-node-dev --inspect=0.0.0.0:9229 --respawn --transpile-only --ignore-watch node_modules ./src/server.ts",
     "build": "tsc",
