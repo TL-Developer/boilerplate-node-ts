@@ -1,9 +1,9 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import mongoose from 'mongoose';
-import routes from './routes/Escola';
-
+import routes from './routes';
 class App {
   public express: express.Application;
+  private version = '/api/v1';
 
   public constructor () {
     this.express = express();
@@ -24,7 +24,9 @@ class App {
   }
 
   private routes(): void {
-    this.express.use(routes);
+    routes.forEach((router) => {
+      this.express.use(this.version, router);
+    });
   }
 }
 

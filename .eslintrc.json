@@ -13,7 +13,7 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "import/extensions": [
-      "error",
+      "off",
       "ignorePackages",
       {
         "ts": "never",
@@ -23,7 +23,7 @@
       }
     ],
     "linebreak-style": 0,
-    "no-console": 1,
+    "no-console": 0,
     "object-curly-spacing": ["error", "always"],
     "block-spacing": "error",
     "semi": ["error", "always"],

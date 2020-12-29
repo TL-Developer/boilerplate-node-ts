@@ -1,15 +1,19 @@
-import { Schema, model, Document } from 'mongoose';
-
-interface IEscola extends Document {
-  login?: string,
-  password?: string,
-}
+import { Schema, model } from 'mongoose';
+import { IEscola } from '../../../../domain/interfaces/entities/Escola';
 
 const EscolaSchema = new Schema({
-  login: String,
-  password: String,
+  nome: String,
+  login: {
+    type: String,
+    unique: true,
+  },
+  senha: String,
+  token: {
+    type: String,
+    unique: true,
+  },
 }, {
   timestamps: true,
 });
 
-export default model<IEscola>('Escola', EscolaSchema);
+export default model<IEscola>('Escolas', EscolaSchema);

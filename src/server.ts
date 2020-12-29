@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import app from './app';
 
 const PORT = 5190;
