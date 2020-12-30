@@ -10,15 +10,13 @@ describe('Unit Test Methods', () => {
 
 describe('Get Endpoint => "/"', () => {
   it('should return a status code 200', async () => {
-    const res = await request(app)
-      .get('/');
+    const res = await request(app).get('/');
 
     expect(res.status).to.be.equal(200);
   });
 
   it('should return a property message', async () => {
-    const res = await request(app)
-      .get('/');
+    const res = await request(app).get('/');
 
     expect(res.body).to.have.property('message');
   });
