@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IEscola } from '../../../../domain/interfaces/entities/Escola';
+import { IEscola } from '@src/app/domain/interfaces/entities/Escola';
 
 const EscolaSchema = new Schema({
   nome: String,

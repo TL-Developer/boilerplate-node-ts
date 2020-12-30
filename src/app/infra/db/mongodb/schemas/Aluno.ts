@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IAluno } from '../../../../domain/interfaces/entities/Aluno';
+import { IAluno } from '@src/app/domain/interfaces/entities/Aluno';
 
 const AlunoSchema = new Schema({
   nome: String,

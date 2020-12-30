@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
-import { TAluno } from './Aluno';
-import { TVinculo } from './Vinculo';
+import { TAluno } from '@src/app/domain/interfaces/entities/Aluno';
+import { TVinculo } from '@src/app/domain/interfaces/entities/Vinculo';
 
 export type TResponsavel = {
   nome: string,
@@ -28,6 +28,6 @@ export interface IResponsavel extends Document {
   cpf: string,
   login: string,
   senha: string,
-};
+}
 
 export default IResponsavel;

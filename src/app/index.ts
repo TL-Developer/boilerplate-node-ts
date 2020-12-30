@@ -1,13 +1,17 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import routes from './routes';
+
 class App {
   public express: express.Application;
+
   private version = '/api/v1';
 
-  public constructor () {
+  public constructor() {
     this.express = express();
+  }
 
+  public init(): void {
     this.middlewares();
     this.database();
     this.routes();

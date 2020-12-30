@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IResponsavel } from '../../../../domain/interfaces/entities/Responsavel';
+import { IResponsavel } from '@src/app/domain/interfaces/entities/Responsavel';
 
 const ResponsavelSchema = new Schema({
   nome: String,

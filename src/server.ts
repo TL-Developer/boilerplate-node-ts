@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
-import app from './app';
+import './utils/module-alias';
+// eslint-disable-next-line import/no-unresolved
+import app from '@src/app';
 
 const PORT = 5190;
 

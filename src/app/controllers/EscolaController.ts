@@ -1,10 +1,10 @@
 import { Request } from 'express';
-import { IRepositoryService } from '../domain/interfaces/services/IRepositoryService';
-import Escola from '../infra/db/mongodb/schemas/Escola';
-import { CRIADO, OK, REQUEST_INCORRETO } from '../helpers/statusCode';
-import { IResponseJson } from '../domain/interfaces/express/response/IResponseJson';
-import { responseJson } from '../helpers/factory';
-import { LOGIN_JA_EXISTE } from '../helpers/messages';
+import { IRepositoryService } from '@src/app/domain/interfaces/services/IRepositoryService';
+import Escola from '@src/app/infra/db/mongodb/schemas/Escola';
+import { CRIADO, OK, REQUEST_INCORRETO } from '@src/app/helpers/statusCode';
+import { IResponseJson } from '@src/app/domain/interfaces/express/response/IResponseJson';
+import { responseJson } from '@src/app/helpers/factory';
+import { LOGIN_JA_EXISTE } from '@src/app/helpers/messages';
 
 class EscolaController implements IRepositoryService {
   public async get(req: Request, res: IResponseJson): Promise<IResponseJson> {

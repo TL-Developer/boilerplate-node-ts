@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
-import { TResponsavel } from './Responsavel';
-import { TTurma } from './Turma';
+import { TResponsavel } from '@src/app/domain/interfaces/entities/Responsavel';
+import { TTurma } from '@src/app/domain/interfaces/entities/Turma';
 
 export type TAluno = {
   nome: string,
@@ -26,6 +26,6 @@ export interface IAluno extends Document {
   cpf: string,
   observacoes: string,
   turma: TTurma,
-};
+}
 
 export default IAluno;

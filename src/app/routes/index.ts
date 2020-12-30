@@ -1,4 +1,4 @@
-import Escola from './Escola';
+import Escola from '@src/app/routes/Escola';
 
 export default [
   Escola,
