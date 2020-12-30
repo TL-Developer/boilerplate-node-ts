@@ -6,6 +6,6 @@ export type TVinculo = {
 
 export interface IVinculo extends Document {
   label: string,
-};
+}
 
 export default IVinculo;

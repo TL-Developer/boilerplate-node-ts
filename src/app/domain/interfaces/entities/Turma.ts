@@ -10,6 +10,6 @@ export interface ITurma extends Document {
   nome: string,
   ano: string,
   status: boolean,
-};
+}
 
 export default ITurma;

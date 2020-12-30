@@ -1,4 +1,4 @@
-export const responseJson = (result?: [] | {}) => ({
+export const responseJson = (result?: []) => ({
   success: true,
   message: null,
   result: result || [],

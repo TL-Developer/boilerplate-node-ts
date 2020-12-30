@@ -4,7 +4,11 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["airbnb-base"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -17,11 +21,10 @@
       "ignorePackages",
       {
         "ts": "never",
-        "tsx": "never",
-        "js": "never",
-        "jsx": "never"
+        "js": "never"
       }
     ],
+    "class-methods-use-this": "off",
     "linebreak-style": 0,
     "no-console": 0,
     "object-curly-spacing": ["error", "always"],
@@ -81,18 +84,6 @@
       "error",
       {
         "allowForLoopAfterthoughts": true
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.test.js",
-          "**/*.test.jsx",
-          "**/*.test.ts",
-          "**/*.test.tsx",
-          "src/tests/**/*"
-        ]
       }
     ],
     "import/prefer-default-export": "off"

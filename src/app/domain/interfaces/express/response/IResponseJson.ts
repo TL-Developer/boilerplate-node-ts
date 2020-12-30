@@ -3,7 +3,7 @@ import { Response } from "express";
 interface Json {
   success: boolean,
   message: string | null,
-  result: any[] | {},
+  result: [],
   error: string | null,
 }
 

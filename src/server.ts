@@ -1,21 +1,24 @@
+import './utils/module-alias';
 import express, { Application } from 'express';
 import { Server } from '@overnightjs/core';
 import { Logger } from '@overnightjs/logger';
-// eslint-disable-next-line import/no-unresolved
-import './utils/module-alias';
-import { AlunoController } from './app/controllers/Aluno';
+import { AlunoController } from '@src/app/controllers/Aluno';
+import { EscolaController } from '@src/app/controllers/Escola';
+import * as database from '@src/database';
 
 export class SetupServer extends Server {
-  constructor(
-    private port = 5190,
-  ) {
+  private port = 5190;
+
+  constructor(port: number) {
     super();
-    this.init();
+
+    this.port = port;
   }
 
   public init(): void {
     this.setupExpress();
     this.setupControllers();
+    this.databaseSetup();
 
     this.app.listen(this.port, () => {
       Logger.Imp(`Server listening on port: ${this.port}`);
@@ -27,17 +30,25 @@ export class SetupServer extends Server {
   }
 
   private setupControllers(): void {
-    const alunoController = new AlunoController();
-
     this.addControllers([
-      alunoController,
+      new AlunoController(),
+      new EscolaController(),
     ]);
   }
 
   public getApp(): Application {
     return this.app;
   }
+
+  private async databaseSetup(): Promise<void> {
+    await database.connect();
+  }
+
+  public async close(): Promise<void> {
+    await database.close();
+  }
 }
 
-// eslint-disable-next-line no-new
-new SetupServer(5190);
+const server = new SetupServer(5190);
+
+server.init();

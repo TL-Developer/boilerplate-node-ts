@@ -5,6 +5,6 @@ export interface IEscola extends Document {
   login: string,
   senha: string,
   token: string,
-};
+}
 
 export default IEscola;

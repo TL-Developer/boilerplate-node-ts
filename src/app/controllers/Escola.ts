@@ -1,22 +1,37 @@
 import { Request } from 'express';
 import { IRepositoryService } from '@src/app/domain/interfaces/services/IRepositoryService';
-import Escola from '@src/app/infra/db/mongodb/schemas/Escola';
 import { CRIADO, OK, REQUEST_INCORRETO } from '@src/app/helpers/statusCode';
 import { IResponseJson } from '@src/app/domain/interfaces/express/response/IResponseJson';
 import { responseJson } from '@src/app/helpers/factory';
 import { LOGIN_JA_EXISTE } from '@src/app/helpers/messages';
+import { Controller, Get, Post } from '@overnightjs/core';
+import Escola from '@src/app/models/Escola';
 
-class EscolaController implements IRepositoryService {
-  public async get(req: Request, res: IResponseJson): Promise<IResponseJson> {
-    const escolas = await Escola.find();
+@Controller('api/v1/escolas')
+export class EscolaController implements IRepositoryService {
+  @Get('')
+  public async listar(_: Request, res: IResponseJson): Promise<IResponseJson> {
+    try {
+      const escolas = await Escola.find();
 
-    return res.status(OK).json({
-      ...responseJson(),
-      result: escolas,
-    });
+      return res.status(OK).json({
+        ...responseJson(),
+        result: escolas,
+      });
+    } catch (error) {
+      return res.status(REQUEST_INCORRETO).json({
+        ...responseJson(),
+        error,
+        success: false,
+      });
+    }
   }
 
-  public async create(req: Request, res: IResponseJson): Promise<IResponseJson> {
+  @Post('')
+  public async salvar(
+    req: Request,
+    res:IResponseJson,
+  ): Promise<IResponseJson> {
     try {
       const escola = await Escola.create(req.body);
 
@@ -35,5 +50,3 @@ class EscolaController implements IRepositoryService {
     }
   }
 }
-
-export default new EscolaController();
