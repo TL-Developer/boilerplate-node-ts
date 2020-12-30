@@ -9,6 +9,8 @@ class App {
 
   public constructor() {
     this.express = express();
+
+    this.init();
   }
 
   public init(): void {
