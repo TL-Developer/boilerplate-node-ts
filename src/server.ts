@@ -1,5 +1,6 @@
 import express, { Application } from 'express';
 import { Server } from '@overnightjs/core';
+import { Logger } from '@overnightjs/logger';
 // eslint-disable-next-line import/no-unresolved
 import './utils/module-alias';
 import { AlunoController } from './app/controllers/Aluno';
@@ -15,6 +16,10 @@ export class SetupServer extends Server {
   public init(): void {
     this.setupExpress();
     this.setupControllers();
+
+    this.app.listen(this.port, () => {
+      Logger.Imp(`Server listening on port: ${this.port}`);
+    });
   }
 
   private setupExpress(): void {
@@ -33,3 +38,6 @@ export class SetupServer extends Server {
     return this.app;
   }
 }
+
+// eslint-disable-next-line no-new
+new SetupServer(5190);
